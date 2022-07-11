@@ -1,2 +1,10 @@
 c:\users\josea\onedrive\documentos\visual studio 2012\Projects\Plasque\Plasque\bin\Debug\Plasque.exe.config
 C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\bin\Debug\Plasque.exe.config
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\bin\Debug\Plasque.exe
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\bin\Debug\Plasque.pdb
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.csprojResolveAssemblyReference.cache
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.Form1.resources
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.Properties.Resources.resources
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.csproj.GenerateResource.Cache
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.exe
+C:\Users\josea\OneDrive\Documentos\Plasque\Plasque\obj\Debug\Plasque.pdb
