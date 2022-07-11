@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabeza = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.botonMenu = new System.Windows.Forms.PictureBox();
             this.botonRestaurar = new System.Windows.Forms.Button();
             this.botonMin = new System.Windows.Forms.Button();
             this.botonMax = new System.Windows.Forms.Button();
             this.botonSalida = new System.Windows.Forms.Button();
+            this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
+            this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.panelCabeza.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabeza
@@ -48,17 +54,18 @@
             this.panelCabeza.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCabeza.Location = new System.Drawing.Point(0, 0);
             this.panelCabeza.Name = "panelCabeza";
-            this.panelCabeza.Size = new System.Drawing.Size(745, 40);
+            this.panelCabeza.Size = new System.Drawing.Size(797, 40);
             this.panelCabeza.TabIndex = 0;
             this.panelCabeza.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCabeza_MouseMove);
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panelMenu.Controls.Add(this.botonMenu);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 40);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 427);
+            this.panelMenu.Size = new System.Drawing.Size(200, 457);
             this.panelMenu.TabIndex = 1;
             // 
             // panelContenedor
@@ -66,9 +73,21 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(200, 40);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(545, 427);
+            this.panelContenedor.Size = new System.Drawing.Size(597, 457);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Visible = false;
+            // 
+            // botonMenu
+            // 
+            this.botonMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.botonMenu.Image = global::Plasque.Properties.Resources.Mobile_Menu_Icon;
+            this.botonMenu.Location = new System.Drawing.Point(157, 9);
+            this.botonMenu.Name = "botonMenu";
+            this.botonMenu.Size = new System.Drawing.Size(30, 30);
+            this.botonMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.botonMenu.TabIndex = 0;
+            this.botonMenu.TabStop = false;
+            this.botonMenu.Click += new System.EventHandler(this.botonMenu_Click);
             // 
             // botonRestaurar
             // 
@@ -79,7 +98,7 @@
             this.botonRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.botonRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonRestaurar.Image = global::Plasque.Properties.Resources.Icono_Restaurar;
-            this.botonRestaurar.Location = new System.Drawing.Point(659, 0);
+            this.botonRestaurar.Location = new System.Drawing.Point(711, 0);
             this.botonRestaurar.Name = "botonRestaurar";
             this.botonRestaurar.Size = new System.Drawing.Size(40, 40);
             this.botonRestaurar.TabIndex = 3;
@@ -95,7 +114,7 @@
             this.botonMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.botonMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonMin.Image = global::Plasque.Properties.Resources.Icono_Minimizar;
-            this.botonMin.Location = new System.Drawing.Point(613, 0);
+            this.botonMin.Location = new System.Drawing.Point(665, 0);
             this.botonMin.Name = "botonMin";
             this.botonMin.Size = new System.Drawing.Size(40, 40);
             this.botonMin.TabIndex = 2;
@@ -111,7 +130,7 @@
             this.botonMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.botonMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonMax.Image = global::Plasque.Properties.Resources.Icono_Maximizar;
-            this.botonMax.Location = new System.Drawing.Point(659, 0);
+            this.botonMax.Location = new System.Drawing.Point(711, 0);
             this.botonMax.Name = "botonMax";
             this.botonMax.Size = new System.Drawing.Size(40, 40);
             this.botonMax.TabIndex = 1;
@@ -127,18 +146,26 @@
             this.botonSalida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.botonSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.botonSalida.Image = global::Plasque.Properties.Resources.Icono_cerrar_FN;
-            this.botonSalida.Location = new System.Drawing.Point(705, 0);
+            this.botonSalida.Location = new System.Drawing.Point(757, 0);
             this.botonSalida.Name = "botonSalida";
             this.botonSalida.Size = new System.Drawing.Size(40, 40);
             this.botonSalida.TabIndex = 0;
             this.botonSalida.UseVisualStyleBackColor = true;
             this.botonSalida.Click += new System.EventHandler(this.botonSalida_Click);
             // 
+            // tmOcultarMenu
+            // 
+            this.tmOcultarMenu.Tick += new System.EventHandler(this.tmOcultarMenu_Tick);
+            // 
+            // tmMostrarMenu
+            // 
+            this.tmMostrarMenu.Tick += new System.EventHandler(this.tmMostrarMenu_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 467);
+            this.ClientSize = new System.Drawing.Size(797, 497);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelCabeza);
@@ -146,6 +173,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelCabeza.ResumeLayout(false);
+            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.botonMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,6 +188,9 @@
         private System.Windows.Forms.Button botonMax;
         private System.Windows.Forms.Button botonMin;
         private System.Windows.Forms.Button botonRestaurar;
+        private System.Windows.Forms.PictureBox botonMenu;
+        private System.Windows.Forms.Timer tmOcultarMenu;
+        private System.Windows.Forms.Timer tmMostrarMenu;
 
     }
 }

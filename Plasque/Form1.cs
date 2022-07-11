@@ -59,5 +59,41 @@ namespace Plasque
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void tmOcultarMenu_Tick(object sender, EventArgs e)
+        {
+            if (panelMenu.Width <= 60)
+            {
+                tmOcultarMenu.Enabled = false;
+            }
+            else
+            {
+                panelMenu.Width = panelMenu.Width - 20;
+            }
+        }
+
+        private void tmMostrarMenu_Tick(object sender, EventArgs e)
+        {
+            if (panelMenu.Width >= 200)
+            {
+                tmMostrarMenu.Enabled = false;
+            }
+            else
+            {
+                panelMenu.Width = panelMenu.Width + 20;
+            }
+        }
+
+        private void botonMenu_Click(object sender, EventArgs e)
+        {
+            if (panelMenu.Width == 200) 
+            {
+                tmOcultarMenu.Enabled = true;
+            } 
+            else 
+            {
+                tmMostrarMenu.Enabled = true;
+            }
+        }
     }
 }
