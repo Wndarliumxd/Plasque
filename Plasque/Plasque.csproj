@@ -96,6 +96,15 @@
   <ItemGroup>
     <None Include="Resources\Mobile-Menu-Icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guatemala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\299087_marker_map_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\299087_marker_map_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
